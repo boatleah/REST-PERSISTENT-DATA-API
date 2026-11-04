@@ -26,7 +26,10 @@ Output:
 ```
 
 ## Test 2: GET all records
-Command: curl http://127.0.0.1:8000/clinical/
+Command: 
+```
+curl http://127.0.0.1:8000/clinical/
+```
 Output:
 ```
 [
@@ -63,8 +66,11 @@ Output:
 ]
 ```
 
-## Test 3: JSON Lines file
-Command: python -c "import sqlite3; [print(r) for r in sqlite3.connect('clinical_data.db').execute('SELECT * FROM clinical_data')]"
+## Test 3: SQLite3 database
+Command: 
+```
+python -c "import sqlite3; [print(r) for r in sqlite3.connect('clinical_data.db').execute('SELECT * FROM clinical_data')]"
+```
 Output:
 ```
 (1, 'Alice Doe', 35, 'Hypertension', '2026-11-04 19:00:49.000326', '130/85', 78, 'Lisinopril 10mg')
@@ -72,8 +78,11 @@ Output:
 (3, 'Alice Doe', 35, 'Hyper', '2026-11-04 19:29:36.321631', '130/85', 78, 'Lisinopril 10mg')
 ```
 
-## Test 4: SQLite database
-Command: more data\clinical_data.jsonl
+## Test 4: JSON Lines
+Command: 
+```
+more data\clinical_data.jsonl
+```
 Output:
 ```
 {"id": 1, "patient_name": "Alice Doe", "age": 35, "diagnosis": "Hypertension", "blood_pressure": "130/85", "heart_rate": 78, "medication": "Lisinopril 10mg", "recorded_at": "2026-11-04T19:00:49.000326"}
